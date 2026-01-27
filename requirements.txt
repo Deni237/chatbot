@@ -1,0 +1,12 @@
+langchain
+langchain-community
+langchain-core
+langchain-text-splitters
+langchain-huggingface
+langchain-chroma
+pypdf
+requests
+beautifulsoup4
+sentence-transformers
+chromadb
+torch
