@@ -1,9 +1,17 @@
 import os
+import sys
+from pathlib import Path
+
+sys.path.append(str(Path(__file__).resolve().parent.parent))
+
 os.environ['USE_TF'] = 'NO'
 os.environ['USE_TORCH'] = 'YES'
+
+from pathlib import Path
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_chroma import Chroma
 from processing.chunking import load_documents, chunk_documents
+
 
 def get_embedding_model():
     """

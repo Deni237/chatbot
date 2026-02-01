@@ -182,10 +182,11 @@ def clean_text(text: str) -> str:
     text = "\n".join(line.strip() for line in text.split("\n") if line.strip())
 
     return text.strip()
+
 if __name__ == "__main__":
     html_links, _ = collect_links(BASE_URL)
 
-    test_url = html_links[0]
+    test_url = html_links[1]
     raw_text = extract_html_content(test_url)
 
     print("Texte nettoyé (extrait) :")
