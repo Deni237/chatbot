@@ -3,9 +3,8 @@ from pathlib import Path
 sys.path.append(str(Path(__file__).resolve().parent.parent))
 
 from embeddings.vector_store import get_embedding_model, get_vector_store
-from langchain_core.prompts import ChatPromptTemplate
 from langchain_ollama.llms import OllamaLLM
-
+from memoire.memory import create_memory
 
 from processing.chunking import load_documents, chunk_documents
 
@@ -18,7 +17,11 @@ embeddings = get_embedding_model()
 vector_store = get_vector_store(chunks, embeddings, persist_directory="vectorstore")
 
 # Initialiser le LLM
-model = OllamaLLM(model="tinyllama")  # ou ton modèle local
+model = OllamaLLM(model="tinyllama")  
+
+# Mémoire conversationnelle
+memory = create_memory()
+
 
 def rag_pipeline(query, top_k=5):
    
@@ -28,10 +31,23 @@ def rag_pipeline(query, top_k=5):
     # Construire le contexte pour le prompt
     context = "\n\n".join([doc.page_content for doc in retrieved_docs])
 
+    # Historique
+    history = memory.get_messages()
+
+    history_text = "\n".join(
+        [f"{m.type.upper()}: {m.content}" for m in history]
+    )
+
     template = f"""
-    Réponds à la question suivante en français uniquement.
+
+    
+
+    Conversation précédente :
+    {history_text}
 
     Context :
+    Réponds UNIQUEMENT en français.
+
     {context}
 
     Question :
@@ -39,10 +55,15 @@ def rag_pipeline(query, top_k=5):
 
     """
 
-    #prompt = ChatPromptTemplate.from_template(template)
-    #chain = prompt|model
+  
     # Générer la réponse
-    response = model.invoke([template])
+    response = model.invoke(template)
+
+    # Sauvegarde dans la mémoire
+    memory.add_turn(query, response)
+
+    
+   
 
     # Retourner la réponse et les sources
     sources = [doc.metadata.get("source") for doc in retrieved_docs]

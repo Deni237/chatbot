@@ -13,7 +13,7 @@ chatbot/
 │ └── scraper.py # Phase 1 — Web scraping
 │
 ├── processing/
-│ ├── init.py
+│ ├── **init**.py
 │ └── chunking.py # Phase 2 — Structuration & chunking
 │
 ├── embeddings/
@@ -24,6 +24,9 @@ chatbot/
 │
 ├── pipelineRAG/
 │ └── pipeline.py # Phase 4 — Pipeline RAG
+│
+├── memoire/
+│ └── memory.py # phase 5 - Module mémoire conversationnelle
 │
 └── README.md
 
