@@ -1,0 +1,26 @@
+# LangChain et extensions
+langchain==0.1.0  # ou la version que tu utilises
+langchain-community
+langchain-core
+langchain-text-splitters
+langchain-huggingface
+langchain-chroma
+
+# Vectorisation et embeddings
+sentence-transformers
+
+# Base de données vectorielle
+chromadb
+
+# PDF et Web Scraping
+pypdf
+requests
+beautifulsoup4
+
+
+
+# LLM Ollama
+ollama
+langchain-ollama
+
+
