@@ -133,6 +133,19 @@ Implémenter une chaîne RAG complète basée sur LangChain pour générer des r
 **Résultat**  
 Un chatbot capable de répondre de manière contextuelle aux questions sur le Manuel de gestion de l’UQAC, avec traçabilité des sources utilisées.
 
+
+## Phase 6 — Interface Web Streamlit
+
+### Objectif
+Fournir une interface utilisateur moderne et intuitive pour interagir avec le chatbot.
+
+### Fichiers concernés
+- `app.py` (à la racine du projet)
+
+### Réalisations
+- Interface de chat interactive avec historique
+- Affichage des sources consultées (liens cliquables)
+
 ## Instructions pour exécuter le projet Chatbot UQAC — Pipeline RAG
 
 **1. Cloner le dépôt**
@@ -173,36 +186,11 @@ c) Télécharger un modèle léger (tinyllama)
 
 - ollama pull tinyllama
 
-**5. Lancer le pipeline RAG**
+**5. Lancer l’Interface Web**
 
 Depuis le terminal et avec l’environnement activé :
 
-- python pipeline.py
+- streamlit run app.py
 
-Ensuite, entrez votre question et attendez la reponse du chatbot
+Ensuite, Ouvrir dans le navigateur : http://localhost:8501
 
-## Phase 6 — Interface Web Streamlit
-
-### Objectif
-Fournir une interface utilisateur moderne et intuitive pour interagir avec le chatbot.
-
-### Fichiers concernés
-- `app.py` (à la racine du projet)
-
-### Réalisations
-- Interface de chat interactive avec historique
-- Affichage des sources consultées (liens cliquables)
-
-### Installation
-
-1. Installer Streamlit et les dépendances :
-```bash
-pip install streamlit langchain-community
-```
-
-2. Lancer l'interface :
-```bash
-streamlit run app.py
-```
-
-3. Ouvrir dans le navigateur : http://localhost:8501
