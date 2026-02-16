@@ -1,34 +1,19 @@
 # chatbot
 
 Chatbot UQAC — Pipeline RAG (Travail réalisé)
+
 Description générale
 
-Ce projet vise à implémenter un chatbot, capable de répondre à des questions à partir du Manuel de gestion de l’UQAC.
+Ce projet vise à développer un chatbot intelligent basé sur l’architecture RAG (Retrieval-Augmented Generation) capable de répondre aux questions des utilisateurs à partir du Manuel de gestion de l’UQAC.
 
-Structure générale du projet à ce jour(31/01/2026)
+Le système repose sur :
+- le web scraping automatisé des documents officiels
+- la vectorisation sémantique des contenus
+- une base vectorielle persistante (ChromaDB)
+- un modèle de langage local via Ollama
+- une interface web interactive Streamlit. 
 
-chatbot/
-│
-├── scraper/
-│ └── scraper.py # Phase 1 — Web scraping
-│
-├── processing/
-│ ├── **init**.py
-│ └── chunking.py # Phase 2 — Structuration & chunking
-│
-├── embeddings/
-│ └── vector_store.py # Phase 3 — Embeddings & base vectorielle
-│
-├── vectorstore/ # Base vectorielle persistante (ChromaDB)
-│ └── (fichiers générés automatiquement)
-│
-├── pipelineRAG/
-│ └── pipeline.py # Phase 4 — Pipeline RAG
-│
-├── memoire/
-│ └── memory.py # phase 5 - Module mémoire conversationnelle
-├── app.py                   ← Interface Streamlit 
-└── README.md
+Les instructions complètes d’installation et d’exécution sont disponibles en bas du document.
 
 ## Phase 1 — Web scraping et extraction des contenus
 
