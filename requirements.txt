@@ -20,7 +20,7 @@ beautifulsoup4
 
 
 # LLM Ollama
-ollama
 langchain-ollama
+
 
 
