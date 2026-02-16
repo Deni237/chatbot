@@ -7,7 +7,7 @@ Description générale
 Ce projet vise à développer un chatbot intelligent basé sur l’architecture RAG (Retrieval-Augmented Generation) capable de répondre aux questions des utilisateurs à partir du Manuel de gestion de l’UQAC.
 
 Le système repose sur :
-- le web scraping automatisé des documents officiels
+- le web scraping automatisé
 - la vectorisation sémantique des contenus
 - une base vectorielle persistante (ChromaDB)
 - un modèle de langage local via Ollama
