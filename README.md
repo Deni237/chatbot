@@ -200,14 +200,9 @@ Fournir une interface utilisateur moderne et intuitive pour interagir avec le ch
 pip install streamlit langchain-community
 ```
 
-2. S'assurer qu'Ollama est lancé :
-```bash
-ollama serve
-```
-
-3. Lancer l'interface :
+2. Lancer l'interface :
 ```bash
 streamlit run app.py
 ```
 
-4. Ouvrir dans le navigateur : http://localhost:8501
+3. Ouvrir dans le navigateur : http://localhost:8501
