@@ -134,7 +134,7 @@ Implémenter une chaîne RAG complète basée sur LangChain pour générer des r
 Un chatbot capable de répondre de manière contextuelle aux questions sur le Manuel de gestion de l’UQAC, avec traçabilité des sources utilisées.
 
 
-## Phase 6 — Interface Web Streamlit
+## Phase 5 — Interface Web Streamlit
 
 ### Objectif
 Fournir une interface utilisateur moderne et intuitive pour interagir avec le chatbot.
