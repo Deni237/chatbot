@@ -1,5 +1,5 @@
 # LangChain et extensions
-langchain==0.1.0  # ou la version que tu utilises
+langchain
 langchain-community
 langchain-core
 langchain-text-splitters
@@ -17,10 +17,11 @@ pypdf
 requests
 beautifulsoup4
 
-
-
 # LLM Ollama
 langchain-ollama
+
+# Web Interface (Streamlit)
+streamlit
 
 
 
